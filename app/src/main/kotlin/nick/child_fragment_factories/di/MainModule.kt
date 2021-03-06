@@ -13,8 +13,7 @@ import dagger.hilt.android.components.ActivityComponent
 import dagger.multibindings.IntoMap
 import nick.child_fragment_factories.R
 import nick.child_fragment_factories.ui.MainFragment
-import nick.child_fragment_factories.ui.configurable.VariantA_OnboardingFragment
-import nick.child_fragment_factories.ui.configurable.VariantB_OnboardingFragment
+import nick.child_fragment_factories.ui.configurable.*
 
 @Module
 @InstallIn(ActivityComponent::class)
@@ -36,11 +35,16 @@ abstract class MainModule {
 
     @Binds
     @IntoMap
-    @FragmentKey(VariantB_OnboardingFragment::class)
-    abstract fun variantB(variantB: VariantB_OnboardingFragment): Fragment
+    @FragmentKey(VariedOnboardingFragment::class)
+    abstract fun varied(varied: VariedOnboardingFragment): Fragment
 
     @Binds
     @IntoMap
-    @FragmentKey(VariantA_OnboardingFragment::class)
-    abstract fun variantA(variantA: VariantA_OnboardingFragment): Fragment
+    @ConfigurationKey(VariantA_Configuration::class)
+    abstract fun variantA_config(config: VariantA_Configuration): OnboardingFragment.Configuration
+
+    @Binds
+    @IntoMap
+    @ConfigurationKey(VariantB_Configuration::class)
+    abstract fun variantB_config(config: VariantB_Configuration): OnboardingFragment.Configuration
 }

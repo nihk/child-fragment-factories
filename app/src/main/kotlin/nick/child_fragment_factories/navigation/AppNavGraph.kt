@@ -6,8 +6,7 @@ object AppNavGraph {
 
     object Destination {
         val main = counter++
-        val variantB = counter++
-        val variantA = counter++
+        val varied = counter++
         val greeting = counter++
     }
 }

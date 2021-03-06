@@ -10,8 +10,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import nick.child_fragment_factories.R
 import nick.child_fragment_factories.di.MainEntryPoint
 import nick.child_fragment_factories.navigation.AppNavGraph
-import nick.child_fragment_factories.ui.configurable.VariantA_OnboardingFragment
-import nick.child_fragment_factories.ui.configurable.VariantB_OnboardingFragment
+import nick.child_fragment_factories.ui.configurable.VariedOnboardingFragment
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(R.layout.main_activity) {
@@ -29,8 +28,7 @@ class MainActivity : AppCompatActivity(R.layout.main_activity) {
             startDestination = AppNavGraph.Destination.main
         ) {
             fragment<MainFragment>(AppNavGraph.Destination.main)
-            fragment<VariantB_OnboardingFragment>(AppNavGraph.Destination.variantB)
-            fragment<VariantA_OnboardingFragment>(AppNavGraph.Destination.variantA)
+            fragment<VariedOnboardingFragment>(AppNavGraph.Destination.varied)
             dialog<GreetingDialogFragment>(AppNavGraph.Destination.greeting)
         }
 
